@@ -4,7 +4,7 @@
  *
  *  University of Washington, Tacoma
  *  TCSS 422 - Operating Systems
- *  Fall 2016
+ *  Spring 2019
  */
 
 Matrix ** bigmatrix;
@@ -13,16 +13,18 @@ Matrix ** bigmatrix;
 
 // Data structure to track matrix production / consumption stats
 // sumtotal - total of all elements produced or consumed
-// multtotal - total number of matrices multipled 
+// multtotal - total number of matrices multipled
 // matrixtotal - total number of matrces produced or consumed
-// counters, amount of produced matrices/ consumed matrices.
+typedef struct prodcons {
+  int sumtotal;
+  int multtotal;
+  int matrixtotal;
+} ProdConsStats;
 
 // PRODUCER-CONSUMER thread method function prototypes
-void *prod_worker(void *prodCount);
-void *cons_worker(void *conCount);
+void *prod_worker(void *arg);
+void *cons_worker(void *arg);
 
 // Routines to add and remove matrices from the bounded buffer
 int put(Matrix *value);
 Matrix * get();
-
-

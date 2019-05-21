@@ -4,11 +4,11 @@
  *
  *  University of Washington, Tacoma
  *  TCSS 422 - Operating Systems
- *  Fall 2016
+ *  Spring 2019
  */
 
 // Number of worker threads - NUMWORK producers, NUMWORK consumers
-#define NUMWORK 4
+#define NUMWORK 1
 
 // Constant for enabling and disabling DEBUG output
 #define OUTPUT 0
@@ -26,6 +26,3 @@ int NUMBER_OF_MATRICES;
 // mode 1-n - Specifies a fixed number of rows and cols with matrix elements of 1
 #define DEFAULT_MATRIX_MODE 0
 int MATRIX_MODE;
-
-
-
